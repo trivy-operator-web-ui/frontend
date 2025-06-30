@@ -3,6 +3,13 @@ export interface VulnerabilityReport {
     report: VulnerabilityReportSpec
 }
 
+export interface SimpleVulnerabilityReport {
+    summary: Summary,
+    name: string,
+    artifact: Artifact,
+    uid: String,
+}
+
 export interface Metadata {
     name: string,
     namespace: string,
