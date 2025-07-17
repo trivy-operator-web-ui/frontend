@@ -1,6 +1,15 @@
-export interface VulnerabilityReport {
-    metadata: Metadata,
-    report: VulnerabilityReportSpec
+export enum Severity {
+    Critical = "CRITICAL",
+    High = "HIGH",
+    Medium = "MEDIUM",
+    Low = "LOW",
+    Unknown = "UNKNOWN",
+}
+
+export interface Metadata {
+    name: string,
+    namespace: string,
+    uid: string,
 }
 
 export interface SimpleVulnerabilityReport {
@@ -10,18 +19,9 @@ export interface SimpleVulnerabilityReport {
     uid: String,
 }
 
-export interface Metadata {
-    name: string,
-    namespace: string,
-    uid: string,
-}
-
-export enum Severity {
-    Critical = "CRITICAL",
-    High = "HIGH",
-    Medium = "MEDIUM",
-    Low = "LOW",
-    Unknown = "UNKNOWN",
+export interface VulnerabilityReport {
+    metadata: Metadata,
+    report: VulnerabilityReportSpec
 }
 
 export interface Cvss {
