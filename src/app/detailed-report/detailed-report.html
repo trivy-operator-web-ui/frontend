@@ -1,2 +1,14 @@
-<p>{{uid}}</p>
-<p>coucou</p>
+
+<div class="flex-container">
+    <mat-card appearance="outlined">
+        <mat-card-header>
+            <mat-card-title>Artifact</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            @if (vulnReport) {
+                <p>Repository: {{vulnReport.report.artifact.repository}}</p>
+                <p>Tag: {{vulnReport.report.artifact.tag}}</p>
+            } 
+        </mat-card-content>
+    </mat-card>
+</div>

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { SimpleVulnerabilityReport } from '../dto/main';
+import { SimpleVulnerabilityReport, VulnerabilityReport } from '../dto/main';
 import { ConfigService } from './config-service';
 import { Observable } from 'rxjs';
 
@@ -17,5 +17,9 @@ export class HttpService {
 
   getVulnerabilityReports(): Observable<SimpleVulnerabilityReport[]> {
     return this.httpClient.get<SimpleVulnerabilityReport[]>(`${this.backendUrl}/api/vulnreports`);
+  }
+
+  getDetailedVulnerabilityReport(uid: string): Observable<VulnerabilityReport> {
+    return this.httpClient.get<VulnerabilityReport>(`${this.backendUrl}/api/vulnreports/${uid}`);
   }
 }

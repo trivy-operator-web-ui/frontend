@@ -1,4 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
+html, body { height: 100%; background-color: rgb(184, 187, 201);}
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+@font-face {
+    font-family: gabarito;
+    src: url("./assets/fonts/Gabarito/Gabarito-VariableFont_wght.ttf");
+}
+
+@font-face {
+    font-family: lato;
+    src: url("./assets/fonts/Lato/Lato-Regular.ttf");
+}
+
+.name-value {
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+}

@@ -1,0 +1,17 @@
+div {
+    color: black;
+}
+
+mat-card-content {
+    color: black
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 80%;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
