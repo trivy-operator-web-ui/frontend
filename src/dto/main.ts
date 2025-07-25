@@ -37,10 +37,10 @@ export interface VulnerabilityReportSpec {
     artifact: Artifact,
     os: OperatingSystem,
     registry?: Registry,
-    scanner: Scanner,
+    scanner: Scanner
     summary: Summary,
     updateTimestamp: string,
-    vulnerabilities: Vulnerabilities[],
+    vulnerabilities: Vulnerability[],
 }
 
 export interface Artifact {
@@ -75,7 +75,7 @@ export interface Summary {
     unknownCount: number,
 }
 
-export interface Vulnerabilities {
+export interface Vulnerability {
     class?: string,
     cvss?: Map<string, Cvss>,
     cvsssource?: string,

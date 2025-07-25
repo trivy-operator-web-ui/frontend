@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, inject, ViewChild } from '@angular/core';
 import { HttpService } from './../http-service';
 import { SimpleVulnerabilityReport } from '../../dto/main';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
