@@ -1,14 +1,49 @@
 
+@if (vulnReport | async; as vulnReport) {
 <div class="flex-container">
     <mat-card appearance="outlined">
         <mat-card-header>
             <mat-card-title>Artifact</mat-card-title>
         </mat-card-header>
         <mat-card-content>
-            @if (vulnReport) {
-                <p>Repository: {{vulnReport.report.artifact.repository}}</p>
-                <p>Tag: {{vulnReport.report.artifact.tag}}</p>
-            } 
+            <p>Repository: {{vulnReport.report.artifact.repository}}</p>
+            <p>Tag: {{vulnReport.report.artifact.tag}}</p>
         </mat-card-content>
     </mat-card>
+
+    <mat-card appearance="outlined">
+        <mat-card-header>
+            <mat-card-title>Summary</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="summary-flex">
+                <div class="summary">
+                    <p style="background-color: rebeccapurple;background-size: 150px;">C</p>
+                    {{vulnReport.report.summary.criticalCount}}
+                </div>
+                <div class="summary">
+                    <p>C</p>
+                    {{vulnReport.report.summary.criticalCount}}
+                </div>
+                <div class="summary">
+                    <p>C</p>
+                    {{vulnReport.report.summary.criticalCount}}
+                </div>
+                <div class="summary">
+                    <p>C</p>
+                    {{vulnReport.report.summary.criticalCount}}
+                </div>
+                <div class="summary">
+                    <p>C</p>
+                    {{vulnReport.report.summary.criticalCount}}
+                </div>
+                <div class="summary">
+                    <p>C</p>
+                    {{vulnReport.report.summary.criticalCount}}
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+
 </div>
+}
