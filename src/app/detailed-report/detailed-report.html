@@ -10,35 +10,32 @@
         </mat-card-content>
     </mat-card>
 
-    <mat-card appearance="outlined">
-        <mat-card-header>
-            <mat-card-title>Severity report</mat-card-title>
-        </mat-card-header>
+    <mat-card appearance="outlined" class="summary-mat-card">
         <mat-card-content>
             <div class="summary-flex">
                 <div class="summary">
-                    <div class="crit-vuln-summary">Critical</div>
-                    <div style="margin-top: 15px;" class="crit-vuln-summary">{{vulnReport.report.summary.criticalCount}}</div>
+                    <div class="crit-vuln-summary">{{vulnReport.report.summary.criticalCount}}</div>
+                    <p>Critical</p>
                 </div>
                 <div class="summary">
-                    <div class="high-vuln-summary">High</div>
-                    <div style="margin-top: 15px;" class="high-vuln-summary">{{vulnReport.report.summary.highCount}}</div>
+                    <div class="high-vuln-summary">{{vulnReport.report.summary.highCount}}</div>
+                    <p>High</p>
                 </div>
                 <div class="summary">
-                    <div class="medium-vuln-summary">Medium</div>
-                    <div style="margin-top: 15px;" class="medium-vuln-summary">{{vulnReport.report.summary.mediumCount}}</div>
+                    <div class="medium-vuln-summary">{{vulnReport.report.summary.mediumCount}}</div>
+                    <p>Medium</p>
                 </div>
                 <div class="summary">
-                    <div class="low-vuln-summary">Low</div>
-                    <div style="margin-top: 15px;" class="low-vuln-summary">{{vulnReport.report.summary.lowCount}}</div>
+                    <div class="low-vuln-summary">{{vulnReport.report.summary.lowCount}}</div>
+                    <p>Low</p>
                 </div>
                 <div class="summary">
-                    <div class="none-vuln-summary">None</div>
-                    <div style="margin-top: 15px;" class="none-vuln-summary">{{vulnReport.report.summary.noneCount}}</div>
+                    <div class="none-vuln-summary">{{vulnReport.report.summary.noneCount}}</div>
+                    <p>None</p>
                 </div>
                 <div class="summary">
-                    <div class="unknown-vuln-summary">Unknown</div>
-                    <div style="margin-top: 15px;" class="unknown-vuln-summary">{{vulnReport.report.summary.unknownCount}}</div>
+                    <div class="unknown-vuln-summary">{{vulnReport.report.summary.unknownCount}}</div>
+                    <p>Unknown</p>
                 </div>
             </div>
         </mat-card-content>
@@ -47,10 +44,10 @@
 }
 
 <div [hidden]="!vulnReport" class="mat-elevation-z8">
-  <table mat-table [dataSource]="dataSource">
+  <table mat-table [dataSource]="dataSource" matSort>
     
     <ng-container matColumnDef="severity">
-      <th mat-header-cell *matHeaderCellDef>Severity</th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by severity">Severity</th>
       <td mat-cell *matCellDef="let element">{{element.severity}}</td>
     </ng-container>
 

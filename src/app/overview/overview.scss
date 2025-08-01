@@ -9,10 +9,10 @@
   border-radius: 15px;
 
   @include mat.table-overrides((
-    background-color: #2d5a77,
-    header-headline-color: #D7D7D7,
+    background-color: #1d4b5c,
+    header-headline-color: #FFFAFA,
     header-headline-font: gabarito,
-    row-item-label-text-color: #D7D7D7,
+    row-item-label-text-color: #FFFAFA,
     row-item-label-text-font: gabarito
   ));
 }

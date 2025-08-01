@@ -1,10 +1,8 @@
-import { AfterContentInit, AfterViewInit, Component, computed, inject, input, Input, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, inject, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpService } from '../http-service';
 import { Vulnerability, VulnerabilityReport } from '../../dto/main';
 import { MatCardModule } from '@angular/material/card';
-import { Observable } from 'rxjs';
-import { AsyncPipe } from '@angular/common';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatSort, MatSortModule } from '@angular/material/sort';
@@ -12,7 +10,7 @@ import { MatSort, MatSortModule } from '@angular/material/sort';
 @Component({
   standalone: true,
   selector: 'app-detailed-report',
-  imports: [MatCardModule, MatTableModule, MatPaginatorModule],
+  imports: [MatCardModule, MatTableModule, MatPaginatorModule, MatSortModule],
   templateUrl: './detailed-report.html',
   styleUrl: './detailed-report.scss'
 })
@@ -28,6 +26,7 @@ export class DetailedReport implements AfterViewInit {
   protected dataSource = new MatTableDataSource<Vulnerability>();
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
 
   constructor() {
     this.httpService.getDetailedVulnerabilityReport(this.uid).subscribe(_report => {
@@ -37,6 +36,7 @@ export class DetailedReport implements AfterViewInit {
   }
   ngAfterViewInit(): void {
     this.dataSource.paginator = this.paginator
+    this.dataSource.sort = this.sort;
   }
 
 }
