@@ -7,10 +7,10 @@ export interface Metadata {
 }
 
 export interface SimpleVulnerabilityReport {
+    uid: string,
+    image: string,
+    namespace: string,
     summary: Summary,
-    name: string,
-    artifact: Artifact,
-    uid: String,
 }
 
 export interface VulnerabilityReport {
