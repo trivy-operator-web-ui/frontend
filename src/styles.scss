@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; background-color: #DAD2D8;}
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: gabarito }
 
 
 @font-face {
@@ -14,8 +14,41 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     src: url("./assets/fonts/Lato/Lato-Regular.ttf");
 }
 
-.name-value {
-    font-weight: bold;
-    text-decoration: underline;
-    cursor: pointer;
+
+.abstract-vuln-dot {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    display: inline-flex;
+    margin-right: 10px;
+}
+
+.critical-vuln-dot {
+    @extend .abstract-vuln-dot;
+    background-color: #FF3838;
+}
+
+.high-vuln-dot {
+    @extend .abstract-vuln-dot;
+    background-color: #FFB302;
+}
+
+.medium-vuln-dot {
+    @extend .abstract-vuln-dot;
+    background-color: #d7c631;
+}
+
+.low-vuln-dot {
+    @extend .abstract-vuln-dot;
+    background-color: #58b625;
+}
+
+.none-vuln-dot {
+    @extend .abstract-vuln-dot;
+    background-color: #2492b7;
+}
+
+.unknown-vuln-dot {
+    @extend .abstract-vuln-dot;
+    background-color: #A4ABB6;
 }
