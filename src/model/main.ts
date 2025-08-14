@@ -2,8 +2,8 @@
 // https://stackoverflow.com/questions/48891174/angular-material-2-datatable-sorting-with-nested-objects/49057493#49057493
 export interface SimpleVulnerabilityReportModel {
     // Metadata
-    name: string,
-    uid: String,
+    uid: string,
+    namespace: string,
     // Summary
     criticalCount: number,
     highCount: number,
@@ -12,8 +12,5 @@ export interface SimpleVulnerabilityReportModel {
     noneCount?: number,
     unknownCount: number,
     // Artifact
-    digest?: string,
-    mimeType?: string,
-    repository?: string,
-    tag?: string,
+    image: string,
 }
