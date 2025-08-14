@@ -33,7 +33,7 @@
   @if (vulnReport.report.os.family) {
     <div class="border"></div>
     <div class="operating-system">
-      <img alt="toto" class="logo" src="/assets/logos/debian.png">
+      <img alt="{{vulnReport.report.os.family}}" class="{{vulnReport.report.os.family}}" src="/assets/logos/{{vulnReport.report.os.family}}.png">
       Powered by {{vulnReport.report.os.family}} {{vulnReport.report.os.name}}      
     </div>
   }
