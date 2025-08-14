@@ -6,7 +6,7 @@
   <mat-spinner></mat-spinner>
 }
 
-<div [hidden]="reportsLoading && reports.length !== 0" class="mat-elevation-z8">
+<div [hidden]="reportsLoading" class="mat-elevation-z8">
   <mat-form-field class="namespace-filter">
     <mat-label>Namespace</mat-label>
     <mat-select (selectionChange)="filterNamespace($event)" [(value)]="namespace">
