@@ -1,10 +1,4 @@
-export enum Severity {
-    Critical = "CRITICAL",
-    High = "HIGH",
-    Medium = "MEDIUM",
-    Low = "LOW",
-    Unknown = "UNKNOWN",
-}
+export type Severity = 0 | 1 | 2 | 3 | 4;
 
 export interface Metadata {
     name: string,
