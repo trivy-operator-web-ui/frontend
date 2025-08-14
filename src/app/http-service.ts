@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { SimpleVulnerabilityReport, VulnerabilityReport } from '../dto/main';
 import { ConfigService } from './config-service';
 import { Observable } from 'rxjs';
@@ -8,12 +8,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class HttpService {
-
-  private backendUrl = '';
-
-  constructor(private httpClient: HttpClient, private configService: ConfigService) {
-    this.backendUrl = configService.getBackendUrl();
-  }
+  private readonly httpClient = inject(HttpClient);
+  private readonly configService = inject(ConfigService);
+  private readonly backendUrl = this.configService.getBackendUrl();
 
   getVulnerabilityReports(): Observable<SimpleVulnerabilityReport[]> {
     return this.httpClient.get<SimpleVulnerabilityReport[]>(`${this.backendUrl}/api/vulnreports`);

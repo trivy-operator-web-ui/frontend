@@ -7,9 +7,11 @@ import { Config } from '../dto/config';
 })
 export class ConfigService {
 
+  private readonly httpClient = inject(HttpClient);
+  
   private backendUrl = '';
 
-  constructor(private httpClient: HttpClient) {
+  constructor() {
     this.httpClient.get<Config>('/assets/config.json').subscribe(config => {
       this.backendUrl = config.backendUrl
     })
