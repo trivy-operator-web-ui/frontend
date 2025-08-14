@@ -1,9 +1,21 @@
 @use '@angular/material' as mat;
 
+header {
+    width: 100%;
+    color: #FFFAFA;
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: #1d4b5c;
+    height: 100px;
+}
+
 .mat-elevation-z8 {
-  margin-top: 100px;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 3%;
   width: 90%;
   overflow: hidden;
   border-radius: 15px;
@@ -15,4 +27,28 @@
     row-item-label-text-color: #FFFAFA,
     row-item-label-text-font: gabarito
   ));
+}
+
+mat-spinner {
+  margin-top: 18%;
+  margin-left: auto;
+  margin-right: auto;
+  @include mat.progress-spinner-overrides((
+    active-indicator-color: #1d4b5c,
+  ));
+}
+
+.name-filter {
+  margin-left: 3%;
+}
+
+.mat-column-image {
+    flex: none;
+    width: 500px;
+}
+
+.image-value {
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
 }
