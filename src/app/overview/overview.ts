@@ -13,11 +13,27 @@ import {FormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectChange, MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import {MatListModule} from '@angular/material/list';
 
 @Component({
   standalone: true,
   selector: 'app-overview',
-  imports: [MatTableModule, MatPaginatorModule, MatSortModule, CommonModule, RouterLink, MatProgressSpinnerModule, FormsModule, MatInputModule, MatSelectModule, MatFormFieldModule],
+  imports: [MatListModule, 
+    MatIconModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    CommonModule,
+    RouterLink,
+    MatProgressSpinnerModule,
+    FormsModule,
+    MatInputModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    MatSidenavModule
+  ],
   templateUrl: './overview.html',
   styleUrl: './overview.scss'
 })
@@ -61,7 +77,6 @@ export class Overview implements OnInit, AfterViewInit {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
     this.dataSource.filterPredicate = function (data, filter) {
-      // Maybe Jaro-Winkler in the future ?
       return data.image.includes(filter)
     }
     this.dataSource.filter = localStorage.getItem('imageFilter') ?? '';
