@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { SimpleVulnerabilityReport, VulnerabilityReport } from '../dto/main';
+import { SimpleVulnerabilityReport, VulnerabilityReport } from '../dto/vulnreport';
 import { ConfigService } from './config-service';
 import { Observable } from 'rxjs';
 

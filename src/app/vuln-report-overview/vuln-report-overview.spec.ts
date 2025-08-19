@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Overview } from './overview';
+import { VulnerabilityReportOverview } from './vuln-report-overview';
 
 describe('Overview', () => {
-  let component: Overview;
-  let fixture: ComponentFixture<Overview>;
+  let component: VulnerabilityReportOverview;
+  let fixture: ComponentFixture<VulnerabilityReportOverview>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Overview]
+      imports: [VulnerabilityReportOverview]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Overview);
+    fixture = TestBed.createComponent(VulnerabilityReportOverview);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

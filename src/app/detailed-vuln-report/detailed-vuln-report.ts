@@ -1,9 +1,9 @@
 import { AfterViewInit, Component, inject, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpService } from '../http-service';
-import { Vulnerability, VulnerabilityReport } from '../../dto/main';
+import { Vulnerability, VulnerabilityReport } from '../../dto/vulnreport';
 import { MatCardModule } from '@angular/material/card';
-import { MatPaginator, MatPaginatorModule, PageEvent } from '@angular/material/paginator';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatSort, MatSortModule, Sort } from '@angular/material/sort';
 import { LowerCasePipe } from '@angular/common';
@@ -12,12 +12,12 @@ import { SeverityService } from '../severity-service';
 
 @Component({
   standalone: true,
-  selector: 'app-detailed-report',
+  selector: 'app-detailed-vuln-report',
   imports: [MatCardModule, MatTableModule, MatPaginatorModule, MatSortModule, LowerCasePipe, MatProgressSpinnerModule],
-  templateUrl: './detailed-report.html',
-  styleUrl: './detailed-report.scss'
+  templateUrl: './detailed-vuln-report.html',
+  styleUrl: './detailed-vuln-report.scss'
 })
-export class DetailedReport implements AfterViewInit {
+export class DetailedVulnerabilityReport implements AfterViewInit {
   protected displayedColumns: string[] = ['severity', 'score', 'title', 'vulnerabilityID',  'installedVersion', 'fixedVersion', 'primaryLink'];
   
   private readonly route: ActivatedRoute = inject(ActivatedRoute);

@@ -1,6 +1,6 @@
 import { Component, inject, ViewChild, OnInit, AfterViewInit } from '@angular/core';
-import { HttpService } from './../http-service';
-import { SimpleVulnerabilityReport } from '../../dto/main';
+import { HttpService } from '../http-service';
+import { SimpleVulnerabilityReport } from '../../dto/vulnreport';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatSort, MatSortModule, Sort } from '@angular/material/sort';
@@ -19,7 +19,7 @@ import {MatListModule} from '@angular/material/list';
 
 @Component({
   standalone: true,
-  selector: 'app-overview',
+  selector: 'app-vuln-report-overview',
   imports: [MatListModule, 
     MatIconModule,
     MatTableModule,
@@ -34,11 +34,11 @@ import {MatListModule} from '@angular/material/list';
     MatFormFieldModule,
     MatSidenavModule
   ],
-  templateUrl: './overview.html',
-  styleUrl: './overview.scss'
+  templateUrl: './vuln-report-overview.html',
+  styleUrl: './vuln-report-overview.scss'
 })
 
-export class Overview implements OnInit, AfterViewInit {
+export class VulnerabilityReportOverview implements OnInit, AfterViewInit {
   private readonly httpService = inject(HttpService);
 
   protected reports: SimpleVulnerabilityReportModel[] = [];
