@@ -1,10 +1,8 @@
-export type Severity = 0 | 1 | 2 | 3 | 4;
+import { Metadata } from "./metdata";
+import { Registry } from "./registry";
+import { Scanner } from "./scanner";
 
-export interface Metadata {
-    name: string,
-    namespace: string,
-    uid: string,
-}
+export type Severity = 0 | 1 | 2 | 3 | 4;
 
 export interface SimpleVulnerabilityReport {
     uid: string,
@@ -31,7 +29,7 @@ export interface VulnerabilityReportSpec {
     artifact: Artifact,
     os: OperatingSystem,
     registry?: Registry,
-    scanner: Scanner
+    scanner: Scanner,
     summary: Summary,
     updateTimestamp: string,
     vulnerabilities: Vulnerability[],
@@ -48,16 +46,6 @@ export interface OperatingSystem {
     eosl: boolean,
     family?: string,
     name?: string
-}
-
-export interface Registry {
-    server?: string
-}
-
-export interface Scanner {
-    name: string,
-    vendor: string,
-    version: string,
 }
 
 export interface Summary {
