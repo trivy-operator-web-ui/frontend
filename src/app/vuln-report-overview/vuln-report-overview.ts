@@ -1,6 +1,6 @@
 import { Component, inject, ViewChild, OnInit, AfterViewInit } from '@angular/core';
 import { HttpService } from '../http-service';
-import { SimpleVulnerabilityReport } from '../../dto/vulnreport';
+import { SimpleVulnerabilityReport } from '../../dto/simplevunerabilityreport';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatSort, MatSortModule, Sort } from '@angular/material/sort';
