@@ -1,8 +1,7 @@
-import { SbomSummary } from "../dto/sbom";
-
-export interface SimpleSbomReport {
+export interface SimpleSbomReportModel {
     uid: string,
     image: string,
     namespace: string,
-    summary: SbomSummary,
+    componentsCount: number,
+    dependenciesCount: number,
 }

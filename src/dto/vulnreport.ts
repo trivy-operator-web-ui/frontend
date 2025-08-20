@@ -4,13 +4,6 @@ import { Scanner } from "./scanner";
 
 export type Severity = 0 | 1 | 2 | 3 | 4;
 
-export interface SimpleVulnerabilityReport {
-    uid: string,
-    image: string,
-    namespace: string,
-    summary: Summary,
-}
-
 export interface VulnerabilityReport {
     metadata: Metadata,
     report: VulnerabilityReportSpec
