@@ -4,7 +4,7 @@ import { SimpleVulnerabilityReport } from '../../dto/vulnreport';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatSort, MatSortModule, Sort } from '@angular/material/sort';
-import { SimpleVulnerabilityReportModel } from '../../model/main';
+import { SimpleVulnerabilityReportModel } from '../../model/simplevulnerabilityreport';
 import { CommonModule } from '@angular/common';
 import { RouterLink} from '@angular/router';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
