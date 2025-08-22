@@ -1,0 +1,139 @@
+<div class="main-content">
+  <header>SBOM Reports</header>
+
+  @if (reports$ | async; as reports) {
+    <div class="mat-elevation-z8">
+      <mat-form-field class="namespace-filter">
+        <mat-label>Namespace</mat-label>
+        <mat-select
+          (selectionChange)="filterNamespace($event)"
+          [(value)]="namespace"
+        >
+          @for (ns of namespaces; track ns) {
+            <mat-option value="{{ ns }}">{{ ns }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="name-filter">
+        <mat-label>Filter by image name</mat-label>
+        <input
+          matInput
+          [(ngModel)]="imageFilter"
+          (keyup)="filterTable($event)"
+          #input
+        />
+      </mat-form-field>
+
+      <button
+        class="download-button"
+        matButton="elevated"
+        (click)="openDownloadPopup()"
+      >
+        Download Reports
+      </button>
+
+      <table
+        mat-table
+        [dataSource]="dataSource"
+        matSort
+        (matSortChange)="saveSortDirection($event)"
+      >
+        <ng-container matColumnDef="select">
+          <th mat-header-cell *matHeaderCellDef>
+            <mat-checkbox
+              (change)="$event ? toggleAllRows() : null"
+              [checked]="selection.hasValue() && isAllSelected()"
+              [indeterminate]="selection.hasValue() && !isAllSelected()"
+            >
+            </mat-checkbox>
+          </th>
+          <td mat-cell *matCellDef="let row">
+            <mat-checkbox
+              (click)="$event.stopPropagation()"
+              (change)="$event ? selection.toggle(row) : null"
+              [checked]="selection.isSelected(row)"
+            >
+            </mat-checkbox>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="repository">
+          <th mat-header-cell *matHeaderCellDef>Repository</th>
+          <td mat-cell *matCellDef="let element">
+            <p class="image-value">{{ element.repository }}</p>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="tag">
+          <th mat-header-cell *matHeaderCellDef>Tag</th>
+          <td mat-cell *matCellDef="let element">{{ element.tag }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="digest">
+          <th mat-header-cell *matHeaderCellDef>Digest</th>
+          <td mat-cell *matCellDef="let element">{{ element.digest }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="ownersCount">
+          <th
+            mat-header-cell
+            *matHeaderCellDef
+            mat-sort-header
+            sortActionDescription="Sort by number"
+          >
+            Owners
+          </th>
+          <td mat-cell *matCellDef="let element">{{ element.ownersCount }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="componentsCount">
+          <th
+            mat-header-cell
+            *matHeaderCellDef
+            mat-sort-header
+            sortActionDescription="Sort by number"
+          >
+            Components
+          </th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.componentsCount }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="dependenciesCount">
+          <th
+            mat-header-cell
+            *matHeaderCellDef
+            mat-sort-header
+            sortActionDescription="Sort by number"
+          >
+            Dependencies
+          </th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.dependenciesCount }}
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr
+          mat-row
+          (click)="selection.toggle(row)"
+          *matRowDef="let row; columns: displayedColumns"
+        ></tr>
+      </table>
+      <mat-paginator
+        [pageSizeOptions]="[5, 10, 20]"
+        showFirstLastButtons
+        aria-label="Select page of vulnerability reports"
+      ></mat-paginator>
+    </div>
+  } @else if (httpErrorMessage() !== "") {
+    <app-error-status
+      [errorMessage]="httpErrorMessage()"
+      [errorCode]="httpErrorCode()"
+    ></app-error-status>
+  } @else {
+    <mat-spinner></mat-spinner>
+  }
+</div>

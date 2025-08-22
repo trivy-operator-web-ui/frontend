@@ -1,0 +1,18 @@
+pre_bump_hooks = [
+    "docker build -t --push ghcr.io/trivy-operator-web-ui/frontend:{{version}} .",
+    "jq '.version |= \"{{version}}\"' package.json > package.tmp.json && mv package.tmp.json package.json"
+]
+
+post_bump_hooks = [
+    "git push --tags origin main"
+]
+
+[changelog]
+path = "CHANGELOG.md"
+template = "remote"
+remote = "github.com"
+repository = "frontend"
+owner = "trivy-operator-web-ui"
+authors = [
+  { username = "ABWassim", signature = "Wassim Ahmed-Belkacem"}
+]

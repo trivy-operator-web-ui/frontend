@@ -1,5 +1,5 @@
 export interface Metadata {
-    name: string,
-    namespace: string,
-    uid: string,
+  name: string;
+  namespace: string;
+  uid: string;
 }

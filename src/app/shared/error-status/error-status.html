@@ -1,0 +1,13 @@
+<div class="error-container">
+  <img
+    alt="{{ friendlyImage }}"
+    class="error-image"
+    src="/assets/errors/{{ friendlyImage }}"
+  />
+  <p class="friendly-error">{{ friendlyError }}</p>
+  @if (suggestLogin) {
+    <button routerLink="/" class="login-button" matButton="elevated">
+      Go back to Login Page
+    </button>
+  }
+</div>

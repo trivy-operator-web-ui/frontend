@@ -1,3 +1,3 @@
 export interface Registry {
-    server?: string
+  server?: string;
 }

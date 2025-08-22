@@ -1,7 +1,9 @@
 export interface SimpleSbomReportModel {
-    uid: string,
-    image: string,
-    namespace: string,
-    componentsCount: number,
-    dependenciesCount: number,
+  namespaces: string[];
+  repository: string;
+  tag: string;
+  digest: string;
+  ownersCount: number;
+  componentsCount: number;
+  dependenciesCount: number;
 }

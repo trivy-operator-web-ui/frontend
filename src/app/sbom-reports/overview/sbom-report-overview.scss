@@ -1,0 +1,115 @@
+@use "@angular/material" as mat;
+
+header {
+  width: 100%;
+  color: #fffafa;
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #1d4b5c;
+  height: 100px;
+}
+
+.menu-icon {
+  position: absolute;
+  left: 30px;
+  cursor: pointer;
+}
+
+.mat-elevation-z8 {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3%;
+  width: 90%;
+  overflow: hidden;
+  border-radius: 15px;
+
+  @include mat.table-overrides(
+    (
+      background-color: #1d4b5c,
+      header-headline-color: #fffafa,
+      header-headline-font: gabarito,
+      row-item-label-text-color: #fffafa,
+      row-item-label-text-font: gabarito,
+    )
+  );
+
+  @include mat.checkbox-overrides(
+    (
+      selected-checkmark-color: #fffafa,
+      selected-icon-color: #58b625,
+      selected-focus-icon-color: #58b625,
+      unselected-focus-icon-color: #fffafa,
+      unselected-hover-icon-color: #fffafa,
+      unselected-hover-state-layer-color: #fffafa,
+      unselected-icon-color: #fffafa,
+    )
+  );
+}
+
+mat-spinner {
+  margin-top: 18%;
+  margin-left: auto;
+  margin-right: auto;
+  @include mat.progress-spinner-overrides(
+    (
+      active-indicator-color: #1d4b5c,
+    )
+  );
+}
+
+.name-filter {
+  margin-left: 3%;
+}
+
+.mat-column-image {
+  flex: none;
+  width: 500px;
+}
+
+.image-value {
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.main-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #dad2d8;
+}
+
+.sidenav-content {
+  background-color: #1d4b5c;
+  padding: 20px;
+  width: 14%;
+  border-radius: 0%;
+
+  @include mat.list-overrides(
+    (
+      list-item-label-text-font: gabarito,
+      list-item-supporting-text-font: gabarito,
+      list-item-label-text-color: #fffafa,
+      list-item-supporting-text-color: #fffafa,
+      list-item-hover-label-text-color: #fffafa,
+    )
+  );
+}
+
+.page-list {
+  color: #fffafa;
+  font-family: gabarito;
+}
+
+mat-list-item {
+  cursor: pointer !important;
+}
+
+.download-button {
+  margin-left: 4%;
+}

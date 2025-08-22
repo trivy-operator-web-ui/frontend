@@ -1,0 +1,24 @@
+name: 🧪 Build
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  tests:
+    name: 🧪 Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📦 Checkout repository code
+        uses: actions/checkout@v6
+
+      - name: 🛠️ Setup Node toolchain
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: ".nvmrc"
+
+      - name: 🧪 Build Test
+        run: |
+          npm install
+          npm run build-prod
