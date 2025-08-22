@@ -1,8 +1,9 @@
-import { Summary } from "./vulnreport";
+import { Artifact } from './artifact';
+import { Summary } from './vulnreport';
 
 export interface SimpleVulnerabilityReport {
-    uid: string,
-    image: string,
-    namespace: string,
-    summary: Summary,
+  artifact: Artifact;
+  owners_count: number;
+  summary: Summary;
+  namespaces: string[];
 }

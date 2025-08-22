@@ -1,0 +1,21 @@
+.error-container {
+  color: #932c2c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.error-image {
+  margin-top: 25%;
+  width: 20%;
+}
+
+.login-button {
+  margin-top: 2%;
+}
+
+.friendly-error {
+  margin-top: 50px;
+  font-size: 30px;
+}

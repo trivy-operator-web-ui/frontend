@@ -1,0 +1,22 @@
+<div class="main-container">
+  <div class="login-form">
+    <div class="form-header">
+      <div class="title">Trivy Operator Web UI</div>
+      <div class="summary">View your reports and download your SBOMs</div>
+    </div>
+    <div class="form">
+      <mat-form-field class="username-field">
+        <mat-label>Username</mat-label>
+        <input [(ngModel)]="username" matInput placeholder="Username" />
+      </mat-form-field>
+      <mat-form-field class="password-field">
+        <mat-label>Password</mat-label>
+        <input [(ngModel)]="password" matInput placeholder="Password" />
+      </mat-form-field>
+      <button class="login-button" (click)="login()" matButton="elevated">
+        Login
+      </button>
+      <div class="error-message">{{ httpErrorMessage() }}</div>
+    </div>
+  </div>
+</div>

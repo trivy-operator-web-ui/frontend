@@ -1,5 +1,5 @@
 export interface Scanner {
-    name: string,
-    vendor: string,
-    version: string,
+  name: string;
+  vendor: string;
+  version: string;
 }

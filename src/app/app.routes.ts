@@ -1,11 +1,25 @@
 import { Routes } from '@angular/router';
-import { DetailedVulnerabilityReport } from './detailed-vuln-report/detailed-vuln-report';
-import { VulnerabilityReportOverview } from './vuln-report-overview/vuln-report-overview';
-import { SbomReportOverview } from './sbom-report-overview/sbom-report-overview';
+import { VulnerabilityReportOverview } from './vulnerability-reports/overview/vuln-report-overview';
+import { SbomReportOverview } from './sbom-reports/overview/sbom-report-overview';
+import { DetailedVulnerabilityReport } from './vulnerability-reports/detailed/detailed-vuln-report';
+import { LoginComponent } from './login/login';
+import { Sidenav } from './shared/sidenav/sidenav';
 
 export const routes: Routes = [
-    { path: 'vulnreport/:uid', component: DetailedVulnerabilityReport },
-    { path: 'vulnreport', component: VulnerabilityReportOverview },
-    { path: 'sbomreport', component: SbomReportOverview },
-    { path: '', redirectTo: '/vulnreport', pathMatch: 'full'}
+  {
+    path: '',
+    component: LoginComponent,
+  },
+  {
+    path: '',
+    component: Sidenav,
+    children: [
+      {
+        path: 'vulnerability-reports-overview',
+        component: VulnerabilityReportOverview,
+      },
+      { path: 'vulnerability-report', component: DetailedVulnerabilityReport },
+      { path: 'sbom-reports-overview', component: SbomReportOverview },
+    ],
+  },
 ];

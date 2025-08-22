@@ -1,8 +1,9 @@
-import { SbomSummary } from "./sbomreport";
+import { Artifact } from './artifact';
+import { SbomSummary } from './sbomreport';
 
 export interface SimpleSbomReport {
-    uid: string,
-    image: string,
-    namespace: string,
-    summary: SbomSummary,
+  artifact: Artifact;
+  namespaces: string[];
+  ownersCount: number;
+  summary: SbomSummary;
 }

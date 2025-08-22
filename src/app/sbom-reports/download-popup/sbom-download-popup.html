@@ -1,0 +1,12 @@
+<div class="main-content">
+  @if (download$ | async) {
+    Your file should be downloaded automatically
+  } @else if (httpErrorMessage() !== "") {
+    <app-error-status
+      [errorMessage]="httpErrorMessage()"
+      [errorCode]="httpErrorCode()"
+    ></app-error-status>
+  } @else {
+    <mat-spinner></mat-spinner>
+  }
+</div>

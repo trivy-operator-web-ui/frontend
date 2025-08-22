@@ -1,0 +1,87 @@
+@use "@angular/material" as mat;
+
+.border {
+  border-left: solid 5px #fffafa;
+  width: 1px;
+  height: 75%;
+  float: left;
+}
+
+.summary {
+  width: 130px;
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fffafa;
+  font-size: 20px;
+}
+
+.abstract-vuln-summary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-size: 25px;
+  color: #fffafa;
+}
+
+.critical-vuln-summary {
+  @extend .abstract-vuln-summary;
+  border: 8px solid #ff3838;
+}
+
+.high-vuln-summary {
+  @extend .abstract-vuln-summary;
+  border: 8px solid #ffb302;
+}
+
+.medium-vuln-summary {
+  @extend .abstract-vuln-summary;
+  border: 8px solid #d7c631;
+}
+
+.low-vuln-summary {
+  @extend .abstract-vuln-summary;
+  border: 8px solid #58b625;
+}
+
+.none-vuln-summary {
+  @extend .abstract-vuln-summary;
+  border: 8px solid #2492b7;
+}
+
+.unknown-vuln-summary {
+  @extend .abstract-vuln-summary;
+  border: 8px solid #a4abb6;
+}
+
+.mat-elevation-z8 {
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  overflow: hidden;
+  border-radius: 15px;
+
+  @include mat.table-overrides(
+    (
+      background-color: #1d4b5c,
+      header-headline-color: #fffafa,
+      header-headline-font: gabarito,
+      row-item-label-text-color: #fffafa,
+      row-item-label-text-font: gabarito,
+    )
+  );
+}
+
+a {
+  color: #fffafa;
+}
+
+.mat-column-severity {
+  flex: none;
+  width: 120px;
+}
