@@ -12,4 +12,6 @@ RUN npm run build-prod
 
 FROM nginxinc/nginx-unprivileged:1.29.5-alpine-slim
 
+COPY nginx/default.conf /etc/nginx/conf.d/.
+
 COPY --from=build /app/dist/trivy-operator-web-ui/browser/. /usr/share/nginx/html/.
