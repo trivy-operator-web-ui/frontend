@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [0.1.2](https://github.com/trivy-operator-web-ui/frontend/compare/ab14c752cf569595626c18948c28c1c8219de588..0.1.2) - 2026-03-23
+#### Bug Fixes
+- nginx conf to handle refresh - ([ab14c75](https://github.com/trivy-operator-web-ui/frontend/commit/ab14c752cf569595626c18948c28c1c8219de588)) - ABWassim
+
+- - -
+
 ## [0.1.1](https://github.com/trivy-operator-web-ui/frontend/compare/f554b600480f3299190cb5b061c3a6c530fca0ba..0.1.1) - 2026-03-23
 #### Bug Fixes
 - seperate local and prod configurations - ([f554b60](https://github.com/trivy-operator-web-ui/frontend/commit/f554b600480f3299190cb5b061c3a6c530fca0ba)) - ABWassim
