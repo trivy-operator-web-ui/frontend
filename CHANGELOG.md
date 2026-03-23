@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [0.1.1](https://github.com/trivy-operator-web-ui/frontend/compare/f554b600480f3299190cb5b061c3a6c530fca0ba..0.1.1) - 2026-03-23
+#### Bug Fixes
+- seperate local and prod configurations - ([f554b60](https://github.com/trivy-operator-web-ui/frontend/commit/f554b600480f3299190cb5b061c3a6c530fca0ba)) - ABWassim
+
+- - -
+
 ## [0.1.0](https://github.com/trivy-operator-web-ui/frontend/compare/3a49ee06c0b09b9373a66372f56b92f30a102e32..0.1.0) - 2026-03-23
 #### Features
 - (**detailed**) logos for OS - ([b183cc0](https://github.com/trivy-operator-web-ui/frontend/commit/b183cc0a0d59a83d5d38b1d3d1df53e01152462b)) - ABWassim
