@@ -80,7 +80,7 @@ export class SbomReportOverview implements AfterViewInit {
   public imageFilter = '';
   public namespace = '';
 
-  public downloadErrorMessage = '';
+  public selectErrorMessage = '';
   public httpErrorMessage = signal('');
   public httpErrorCode = signal(-1);
 
@@ -201,10 +201,10 @@ export class SbomReportOverview implements AfterViewInit {
 
   protected openDownloadPopup() {
     if (this.selection.selected.length === 0) {
-      this.downloadErrorMessage =
-        'You need to select at least 1 sbom to download';
+      this.selectErrorMessage =
+        'You need to select at least 1 SBOM to download';
     } else {
-      this.downloadErrorMessage = '';
+      this.selectErrorMessage = '';
       const artifacts: Artifact[] = this.selection.selected.map(
         (sbom): Artifact => ({
           repository: sbom.repository,
@@ -214,6 +214,8 @@ export class SbomReportOverview implements AfterViewInit {
       );
       this.dialog.open(SbomDownloadPopup, {
         data: artifacts,
+        height: '400px',
+        width: '600px'
       });
     }
   }
