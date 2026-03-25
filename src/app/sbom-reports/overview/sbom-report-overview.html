@@ -33,6 +33,8 @@
         Download Reports
       </button>
 
+      <p class="select-error-message">{{selectErrorMessage}}</p>
+
       <table
         mat-table
         [dataSource]="dataSource"
@@ -61,7 +63,7 @@
         <ng-container matColumnDef="repository">
           <th mat-header-cell *matHeaderCellDef>Repository</th>
           <td mat-cell *matCellDef="let element">
-            <p class="image-value">{{ element.repository }}</p>
+            <p>{{ element.repository }}</p>
           </td>
         </ng-container>
 
