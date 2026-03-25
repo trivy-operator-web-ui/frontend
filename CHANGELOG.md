@@ -2,6 +2,18 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [0.1.3](https://github.com/trivy-operator-web-ui/frontend/compare/35955dfb96c628b147c13de4acf86f397d63bd3c..0.1.3) - 2026-03-25
+#### Bug Fixes
+- popup size and download sbom err message - ([4f0d9fd](https://github.com/trivy-operator-web-ui/frontend/commit/4f0d9fd14ecf221ddd4c120ee84837dd28c2dce2)) - ABWassim
+#### Documentation
+- readme, license, contributing guidelines - ([9b8083c](https://github.com/trivy-operator-web-ui/frontend/commit/9b8083cccf0fd64787e6f538291ba6fdaadf2d65)) - ABWassim
+#### Continuous Integration
+- commit checks - ([dcbea68](https://github.com/trivy-operator-web-ui/frontend/commit/dcbea6844847b76e91a8f108b36ef7ff216a358e)) - ABWassim
+#### Miscellaneous Chores
+- unused css classes - ([35955df](https://github.com/trivy-operator-web-ui/frontend/commit/35955dfb96c628b147c13de4acf86f397d63bd3c)) - ABWassim
+
+- - -
+
 ## [0.1.2](https://github.com/trivy-operator-web-ui/frontend/compare/ab14c752cf569595626c18948c28c1c8219de588..0.1.2) - 2026-03-23
 #### Bug Fixes
 - nginx conf to handle refresh - ([ab14c75](https://github.com/trivy-operator-web-ui/frontend/commit/ab14c752cf569595626c18948c28c1c8219de588)) - ABWassim
