@@ -12,12 +12,6 @@ header {
   height: 100px;
 }
 
-.menu-icon {
-  position: absolute;
-  left: 30px;
-  cursor: pointer;
-}
-
 .mat-elevation-z8 {
   margin-left: auto;
   margin-right: auto;
@@ -64,11 +58,6 @@ mat-spinner {
   margin-left: 3%;
 }
 
-.mat-column-image {
-  flex: none;
-  width: 500px;
-}
-
 .image-value {
   font-weight: bold;
   text-decoration: underline;
@@ -99,15 +88,6 @@ mat-spinner {
       list-item-hover-label-text-color: #fffafa,
     )
   );
-}
-
-.page-list {
-  color: #fffafa;
-  font-family: gabarito;
-}
-
-mat-list-item {
-  cursor: pointer !important;
 }
 
 .download-button {
