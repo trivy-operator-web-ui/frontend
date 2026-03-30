@@ -7,6 +7,8 @@ import { SimpleSbomReport } from '../../dto/simplesbomreport';
 import { SimpleVulnerabilityReport } from '../../dto/simplevunerabilityreport';
 import { Credentials } from '../../dto/credentials';
 import { ConfigService } from './config-service';
+import { SimpleExposedSecretReport } from '../../dto/simpleexposedsecretreport';
+import { ImageExposedSecretReportDTO } from '../../dto/exposedsecretreport';
 
 @Injectable({
   providedIn: 'root',
@@ -45,6 +47,21 @@ export class HttpService {
       `${this.backendUrl}/api/sbom-reports/download`,
       artifacts,
       { responseType: 'blob', observe: 'response' },
+    );
+  }
+
+    public getExposedSecretReports(): Observable<SimpleExposedSecretReport[]> {
+    return this.httpClient.get<SimpleExposedSecretReport[]>(
+      `${this.backendUrl}/api/exposed-secret-reports/simple`,
+    );
+  }
+
+  public getDetailedExposedSecretReport(
+    artifact: Artifact,
+  ): Observable<ImageExposedSecretReportDTO> {
+    return this.httpClient.post<ImageExposedSecretReportDTO>(
+      `${this.backendUrl}/api/exposed-secret-reports/detailed`,
+      artifact,
     );
   }
 }
