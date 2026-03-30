@@ -1,9 +1,8 @@
 import { Artifact } from './artifact';
 import { Registry } from './registry';
 import { Scanner } from './scanner';
+import { Severity } from './severity';
 import { Workload } from './workload';
-
-export type Severity = 'UNKNOWN' | 'LOW' | 'MEDIUM' | 'HIGH' | 'CRITICAL';
 
 export interface VulnerabilityReport {
   owners: Workload[];
