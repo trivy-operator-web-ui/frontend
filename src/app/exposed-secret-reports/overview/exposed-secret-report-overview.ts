@@ -21,8 +21,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { ErrorStatus } from '../../shared/error-status/error-status';
 import { HttpService } from '../../services/http-service';
-import { SimpleExposedSecretReport } from '../../../dto/simpleexposedsecretreport';
-import { SimpleExposedSecretReportModel } from '../../../model/simpleexposedsecretreport';
+import { SimpleImageExposedSecretReportDTO } from '../../../dto/simple-exposed-secret-report';
+import { SimpleImageExposedSecretReportModel } from '../../../model/simple-exposed-secret-report';
 
 @Component({
   standalone: true,
@@ -59,9 +59,9 @@ export class ExposedSecretReportOverview implements AfterViewInit {
   private readonly httpService = inject(HttpService);
   private readonly router = inject(Router);
 
-  protected reports: SimpleExposedSecretReportModel[] = [];
+  protected reports: SimpleImageExposedSecretReportModel[] = [];
 
-  protected reports$: Observable<SimpleExposedSecretReportModel[]> =
+  protected reports$: Observable<SimpleImageExposedSecretReportModel[]> =
     this.httpService.getExposedSecretReports().pipe(
       catchError((err) => {
         this.errorMessage.set(err.message);
@@ -86,12 +86,13 @@ export class ExposedSecretReportOverview implements AfterViewInit {
     );
 
   protected dataSource =
-    new MatTableDataSource<SimpleExposedSecretReportModel>();
+    new MatTableDataSource<SimpleImageExposedSecretReportModel>();
   protected displayedColumns: string[] = [
     'repository',
-    'digest',
     'tag',
+    'digest',
     'namespaceCount',
+    'ownersCount',
     'criticalCount',
     'highCount',
     'mediumCount',
@@ -131,8 +132,8 @@ export class ExposedSecretReportOverview implements AfterViewInit {
   }
 
   private mapDtoToModel(
-    simpleReport: SimpleExposedSecretReport,
-  ): SimpleExposedSecretReportModel {
+    simpleReport: SimpleImageExposedSecretReportDTO,
+  ): SimpleImageExposedSecretReportModel {
     return {
       namespaces: simpleReport.namespaces,
       namespaceCount: simpleReport.namespaces.length,
@@ -143,6 +144,7 @@ export class ExposedSecretReportOverview implements AfterViewInit {
       repository: simpleReport.artifact.repository || '',
       digest: simpleReport.artifact.digest || '',
       tag: simpleReport.artifact.tag || '',
+      ownersCount: simpleReport.ownersCount,
     };
   }
 

@@ -1,9 +1,9 @@
 import { Component, inject, Input, OnInit, signal } from '@angular/core';
 import { HttpService } from '../../services/http-service';
 import { catchError, Observable } from 'rxjs';
-import { Artifact } from '../../../dto/artifact';
+import { Artifact } from '../../../dto/common/artifact';
 import { MatButtonToggleChange, MatButtonToggleModule } from '@angular/material/button-toggle';
-import { ImageExposedSecretReportDTO } from '../../../dto/exposedsecretreport';
+import { ImageExposedSecretReportDTO } from '../../../dto/exposed-secret-report';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { AsyncPipe } from '@angular/common';
 import { OwnersTable } from '../../shared/owners-table/owners-table';

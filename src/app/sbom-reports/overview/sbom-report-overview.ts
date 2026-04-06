@@ -6,11 +6,11 @@ import {
   signal,
 } from '@angular/core';
 import { HttpService } from '../../services/http-service';
-import { SimpleSbomReport } from '../../../dto/simplesbomreport';
+import { SimpleImageSbomReportDTO } from '../../../dto/simple-sbom-report';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatSort, MatSortModule, Sort } from '@angular/material/sort';
-import { SimpleSbomReportModel } from '../../../model/simplesbomreport';
+import { SimpleImageSbomReportModel } from '../../../model/simple-sbom-report';
 import { CommonModule } from '@angular/common';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { catchError, EMPTY, map, Observable, tap } from 'rxjs';
@@ -26,7 +26,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialog } from '@angular/material/dialog';
 import { SbomDownloadPopup } from '../download-popup/sbom-download-popup';
-import { Artifact } from '../../../dto/artifact';
+import { Artifact } from '../../../dto/common/artifact';
 import { ErrorStatus } from '../../shared/error-status/error-status';
 @Component({
   standalone: true,
@@ -61,10 +61,10 @@ export class SbomReportOverview implements AfterViewInit {
     sort: 'sbomReportOverviewSort',
   };
 
-  public selection = new SelectionModel<SimpleSbomReportModel>(true, []);
+  public selection = new SelectionModel<SimpleImageSbomReportModel>(true, []);
 
-  protected reports: SimpleSbomReportModel[] = [];
-  protected dataSource = new MatTableDataSource<SimpleSbomReportModel>();
+  protected reports: SimpleImageSbomReportModel[] = [];
+  protected dataSource = new MatTableDataSource<SimpleImageSbomReportModel>();
   protected displayedColumns: string[] = [
     'select',
     'repository',
@@ -84,7 +84,7 @@ export class SbomReportOverview implements AfterViewInit {
   public httpErrorMessage = signal('');
   public httpErrorCode = signal(-1);
 
-  protected reports$: Observable<SimpleSbomReportModel[]> = this.httpService
+  protected reports$: Observable<SimpleImageSbomReportModel[]> = this.httpService
     .getSbomReports()
     .pipe(
       catchError((err) => {
@@ -139,7 +139,7 @@ export class SbomReportOverview implements AfterViewInit {
     }
   }
 
-  private mapDtoToModel(report: SimpleSbomReport): SimpleSbomReportModel {
+  private mapDtoToModel(report: SimpleImageSbomReportDTO): SimpleImageSbomReportModel {
     return {
       namespaces: report.namespaces,
       repository: report.artifact.repository || '',

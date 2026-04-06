@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Severity } from '../../dto/severity';
+import { Severity } from '../../dto/common/severity';
 
 @Injectable({
   providedIn: 'root',

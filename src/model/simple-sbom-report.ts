@@ -1,4 +1,4 @@
-export interface SimpleSbomReportModel {
+export interface SimpleImageSbomReportModel {
   namespaces: string[];
   repository: string;
   tag: string;

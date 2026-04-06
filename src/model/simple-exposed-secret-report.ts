@@ -1,4 +1,4 @@
-export interface SimpleExposedSecretReportModel {
+export interface SimpleImageExposedSecretReportModel {
   // Metadata
   namespaces: string[];
   namespaceCount: number;
@@ -11,4 +11,6 @@ export interface SimpleExposedSecretReportModel {
   repository: string;
   tag: string;
   digest: string;
+  // Owners
+  ownersCount: number;
 }
