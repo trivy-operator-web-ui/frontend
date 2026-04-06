@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, inject, Input, OnChanges, SimpleChanges, ViewChild } from '@angular/core';
 import { SeverityService } from '../../../services/severity-service';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
-import { ExposedSecret } from '../../../../dto/exposedsecretreport';
+import { ExposedSecret } from '../../../../dto/exposed-secret-report';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSort, MatSortModule, Sort } from '@angular/material/sort';
 import { LowerCasePipe } from '@angular/common';

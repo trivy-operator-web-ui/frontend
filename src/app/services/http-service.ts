@@ -1,14 +1,14 @@
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { VulnerabilityReport } from '../../dto/vulnreport';
-import { Artifact } from '../../dto/artifact';
+import { ImageVulnerabilityReportDTO } from '../../dto/vulnerability-report';
+import { Artifact } from '../../dto/common/artifact';
 import { Observable } from 'rxjs';
-import { SimpleSbomReport } from '../../dto/simplesbomreport';
-import { SimpleVulnerabilityReport } from '../../dto/simplevunerabilityreport';
+import { SimpleImageSbomReportDTO } from '../../dto/simple-sbom-report';
+import { SimpleImageVulnerabilityReportDTO } from '../../dto/simple-vunerability-report';
 import { Credentials } from '../../dto/credentials';
 import { ConfigService } from './config-service';
-import { SimpleExposedSecretReport } from '../../dto/simpleexposedsecretreport';
-import { ImageExposedSecretReportDTO } from '../../dto/exposedsecretreport';
+import { SimpleImageExposedSecretReportDTO } from '../../dto/simple-exposed-secret-report';
+import { ImageExposedSecretReportDTO } from '../../dto/exposed-secret-report';
 
 @Injectable({
   providedIn: 'root',
@@ -22,23 +22,23 @@ export class HttpService {
     return this.httpClient.post(`${this.backendUrl}/api/login`, credentials);
   }
 
-  public getVulnerabilityReports(): Observable<SimpleVulnerabilityReport[]> {
-    return this.httpClient.get<SimpleVulnerabilityReport[]>(
+  public getVulnerabilityReports(): Observable<SimpleImageVulnerabilityReportDTO[]> {
+    return this.httpClient.get<SimpleImageVulnerabilityReportDTO[]>(
       `${this.backendUrl}/api/vulnerability-reports/simple`,
     );
   }
 
   public getDetailedVulnerabilityReport(
     artifact: Artifact,
-  ): Observable<VulnerabilityReport> {
-    return this.httpClient.post<VulnerabilityReport>(
+  ): Observable<ImageVulnerabilityReportDTO> {
+    return this.httpClient.post<ImageVulnerabilityReportDTO>(
       `${this.backendUrl}/api/vulnerability-reports/detailed`,
       artifact,
     );
   }
 
-  public getSbomReports(): Observable<SimpleSbomReport[]> {
-    return this.httpClient.get<SimpleSbomReport[]>(
+  public getSbomReports(): Observable<SimpleImageSbomReportDTO[]> {
+    return this.httpClient.get<SimpleImageSbomReportDTO[]>(
       `${this.backendUrl}/api/sbom-reports/simple`,
     );
   }
@@ -50,8 +50,8 @@ export class HttpService {
     );
   }
 
-    public getExposedSecretReports(): Observable<SimpleExposedSecretReport[]> {
-    return this.httpClient.get<SimpleExposedSecretReport[]>(
+    public getExposedSecretReports(): Observable<SimpleImageExposedSecretReportDTO[]> {
+    return this.httpClient.get<SimpleImageExposedSecretReportDTO[]>(
       `${this.backendUrl}/api/exposed-secret-reports/simple`,
     );
   }

@@ -1,14 +1,14 @@
 import { Scanner } from 'typescript';
-import { Metadata } from './metdata';
-import { Registry } from './registry';
-import { Artifact } from './artifact';
+import { Metadata } from './common/metdata';
+import { Registry } from './common/registry';
+import { Artifact } from './common/artifact';
 
-export interface SbomReport {
-  report: SbomReportSpec;
+export interface ImageSbomReportDTO {
+  report: ImageSbomReport;
   metadata: Metadata;
 }
 
-export interface SbomReportSpec {
+export interface ImageSbomReport {
   artifact: Artifact;
   // We don't really care about the data inside the SBOM, we just need to export it
   components: unknown;

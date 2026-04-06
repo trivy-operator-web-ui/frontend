@@ -74,7 +74,7 @@
 
         <ng-container matColumnDef="digest">
           <th mat-header-cell *matHeaderCellDef>Digest</th>
-          <td mat-cell *matCellDef="let element">{{ element.digest }}</td>
+          <td mat-cell *matCellDef="let element">{{ element.digest | slice: 0 : 15 }}</td>
         </ng-container>
 
         <ng-container matColumnDef="ownersCount">

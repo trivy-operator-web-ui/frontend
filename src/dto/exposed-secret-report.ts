@@ -1,7 +1,7 @@
-import { Artifact } from "./artifact"
-import { Registry } from "./registry"
-import { Scanner } from "./scanner"
-import { Severity } from "./severity"
+import { Artifact } from "./common/artifact"
+import { Registry } from "./common/registry"
+import { Scanner } from "./common/scanner"
+import { Severity } from "./common/severity"
 import { Workload } from "./workload"
 
 export interface ImageExposedSecretReportDTO {

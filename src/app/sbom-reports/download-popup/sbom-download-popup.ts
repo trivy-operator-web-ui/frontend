@@ -2,7 +2,7 @@ import { Component, inject, OnInit, signal } from '@angular/core';
 import { HttpService } from '../../services/http-service';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
-import { Artifact } from '../../../dto/artifact';
+import { Artifact } from '../../../dto/common/artifact';
 import { catchError, EMPTY, Observable, tap } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
