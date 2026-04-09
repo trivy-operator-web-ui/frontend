@@ -2,6 +2,17 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [0.2.0](https://github.com/trivy-operator-web-ui/frontend/compare/2d90aed30bb09acdbb76b2017d126e7c5286dada..0.2.0) - 2026-04-09
+#### Features
+- enter press on login form - ([5397236](https://github.com/trivy-operator-web-ui/frontend/commit/5397236d432d320d742ee6aa223363c390dd7301)) - cn
+- exposed secret reports - ([2d90aed](https://github.com/trivy-operator-web-ui/frontend/commit/2d90aed30bb09acdbb76b2017d126e7c5286dada)) - ABWassim
+#### Documentation
+- update contributing guide - ([d34a943](https://github.com/trivy-operator-web-ui/frontend/commit/d34a9437b28ab7195ee2e9ca9a3d336bce82101f)) - cn
+#### Refactoring
+- naming, column order - ([ed4b37d](https://github.com/trivy-operator-web-ui/frontend/commit/ed4b37db5d9143db4bc41a3eecb1327d8619de9e)) - ABWassim
+
+- - -
+
 ## [0.1.3](https://github.com/trivy-operator-web-ui/frontend/compare/35955dfb96c628b147c13de4acf86f397d63bd3c..0.1.3) - 2026-03-25
 #### Bug Fixes
 - popup size and download sbom err message - ([4f0d9fd](https://github.com/trivy-operator-web-ui/frontend/commit/4f0d9fd14ecf221ddd4c120ee84837dd28c2dce2)) - ABWassim
