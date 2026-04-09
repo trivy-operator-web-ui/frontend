@@ -7,11 +7,11 @@
     <div class="form">
       <mat-form-field class="username-field">
         <mat-label>Username</mat-label>
-        <input [(ngModel)]="username" matInput placeholder="Username" />
+        <input [(ngModel)]="username" matInput (keyup.enter)="login()" placeholder="Username" />
       </mat-form-field>
       <mat-form-field class="password-field">
         <mat-label>Password</mat-label>
-        <input [(ngModel)]="password" matInput placeholder="Password" />
+        <input [(ngModel)]="password" matInput (keyup.enter)="login()" placeholder="Password" />
       </mat-form-field>
       <button class="login-button" (click)="login()" matButton="elevated">
         Login
