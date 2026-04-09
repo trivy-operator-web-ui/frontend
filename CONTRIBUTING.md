@@ -18,6 +18,13 @@ Simply run `npm install`.
 
 ## C. Development server
 
+First, create a file at `./src/assets/config.dev.json` which will contain the backend URL to call. It should look like this :
+```json
+{
+  "backendUrl": "<your-endpoint>"
+}
+```
+
 To start a local development server, run:
 
 ```bash
