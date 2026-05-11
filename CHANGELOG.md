@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [0.2.1](https://github.com/trivy-operator-web-ui/frontend/compare/a8715527ba7f5ed80cae888285ee22503eb7e5d8..0.2.1) - 2026-05-11
+#### Bug Fixes
+- empty backendUrl in HttpService - ([10e23e5](https://github.com/trivy-operator-web-ui/frontend/commit/10e23e5fb9f687c561ebd820b671299349253cb0)) - ABWassim
+- mask password input - ([a871552](https://github.com/trivy-operator-web-ui/frontend/commit/a8715527ba7f5ed80cae888285ee22503eb7e5d8)) - ABWassim
+
+- - -
+
 ## [0.2.0](https://github.com/trivy-operator-web-ui/frontend/compare/2d90aed30bb09acdbb76b2017d126e7c5286dada..0.2.0) - 2026-04-09
 #### Features
 - enter press on login form - ([5397236](https://github.com/trivy-operator-web-ui/frontend/commit/5397236d432d320d742ee6aa223363c390dd7301)) - cn
