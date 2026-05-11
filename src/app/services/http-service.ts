@@ -16,51 +16,57 @@ import { ImageExposedSecretReportDTO } from '../../dto/exposed-secret-report';
 export class HttpService {
   private readonly httpClient = inject(HttpClient);
   private readonly configService = inject(ConfigService);
-  private readonly backendUrl = this.configService.getBackendUrl();
 
   public login(credentials: Credentials): Observable<any> {
-    return this.httpClient.post(`${this.backendUrl}/api/login`, credentials);
+    const backendUrl = this.configService.getBackendUrl();
+    return this.httpClient.post(`${backendUrl}/api/login`, credentials);
   }
 
   public getVulnerabilityReports(): Observable<SimpleImageVulnerabilityReportDTO[]> {
+    const backendUrl = this.configService.getBackendUrl();
     return this.httpClient.get<SimpleImageVulnerabilityReportDTO[]>(
-      `${this.backendUrl}/api/vulnerability-reports/simple`,
+      `${backendUrl}/api/vulnerability-reports/simple`,
     );
   }
 
   public getDetailedVulnerabilityReport(
     artifact: Artifact,
   ): Observable<ImageVulnerabilityReportDTO> {
+    const backendUrl = this.configService.getBackendUrl();
     return this.httpClient.post<ImageVulnerabilityReportDTO>(
-      `${this.backendUrl}/api/vulnerability-reports/detailed`,
+      `${backendUrl}/api/vulnerability-reports/detailed`,
       artifact,
     );
   }
 
   public getSbomReports(): Observable<SimpleImageSbomReportDTO[]> {
+    const backendUrl = this.configService.getBackendUrl();
     return this.httpClient.get<SimpleImageSbomReportDTO[]>(
-      `${this.backendUrl}/api/sbom-reports/simple`,
+      `${backendUrl}/api/sbom-reports/simple`,
     );
   }
   public downloadSboms(artifacts: Artifact[]): Observable<HttpResponse<Blob>> {
+    const backendUrl = this.configService.getBackendUrl();
     return this.httpClient.post(
-      `${this.backendUrl}/api/sbom-reports/download`,
+      `${backendUrl}/api/sbom-reports/download`,
       artifacts,
       { responseType: 'blob', observe: 'response' },
     );
   }
 
-    public getExposedSecretReports(): Observable<SimpleImageExposedSecretReportDTO[]> {
+  public getExposedSecretReports(): Observable<SimpleImageExposedSecretReportDTO[]> {
+    const backendUrl = this.configService.getBackendUrl();
     return this.httpClient.get<SimpleImageExposedSecretReportDTO[]>(
-      `${this.backendUrl}/api/exposed-secret-reports/simple`,
+      `${backendUrl}/api/exposed-secret-reports/simple`,
     );
   }
 
   public getDetailedExposedSecretReport(
     artifact: Artifact,
   ): Observable<ImageExposedSecretReportDTO> {
+    const backendUrl = this.configService.getBackendUrl();
     return this.httpClient.post<ImageExposedSecretReportDTO>(
-      `${this.backendUrl}/api/exposed-secret-reports/detailed`,
+      `${backendUrl}/api/exposed-secret-reports/detailed`,
       artifact,
     );
   }
